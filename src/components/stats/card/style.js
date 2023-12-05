@@ -3,8 +3,7 @@ import css from '@standard/css'
 const style = css`
   .card {
     background-color: var(--color-pure-white);
-    border: var(--border-width-hairline) solid var(--color-pure-white);
-    border-radius: var(--border-radius-sm);
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
     box-shadow: var(--shadow-level-1) var(--color-master-light);
     content-visibility: auto;
     display: flex;
@@ -33,6 +32,20 @@ const style = css`
     .card {
       min-width: calc(25% - 12px);
       width: calc(25% - 12px);
+    }
+  }
+
+  @media (width >= 1360px) {
+    .card {
+      min-width: calc(20% - 12.8px);
+      width: calc(20% - 12.8px);
+    }
+  }
+
+  @media (width >= 1664px) {
+    .card {
+      min-width: calc(16.666% - 13.333px);
+      width: calc(16.666% - 13.333px);
     }
   }
 
