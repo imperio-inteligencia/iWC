@@ -1,9 +1,11 @@
-import h, { Fragment } from '@standard/h'
+import h from '@standard/h'
 import text from '@elements/text'
 
 function component (property) {
   return (
-    <text.Span master darker xxxs>{property.description} ({property.quantity})</text.Span>
+    <text.Span master xxxs>
+      {property.description} <text.A href='#' complete xxxs>({property.quantity})</text.A>
+    </text.Span>
   )
 }
 

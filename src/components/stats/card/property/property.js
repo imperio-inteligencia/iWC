@@ -6,8 +6,12 @@ import magic from '@standard/magic'
 class Property {
   #data = {}
 
+  get color () {
+    return (this.#data.cor ?? 'var(--color-pure-white)')
+  }
+
   get description () {
-    return (this.#data.descricaoSituacao ?? '')
+    return (this.#data.descricaoPrioridade ?? '')
   }
 
   get id () {

@@ -7,8 +7,8 @@ import Property from './property'
 class Card {
   #data = {}
 
-  get situation () {
-    return (this.#data.properties[0]?.situation ?? '')
+  get color () {
+    return (this.#data.properties[0]?.color ?? 'var(--color-master-light)')
   }
 
   get quantity () {
@@ -17,6 +17,10 @@ class Card {
 
   get properties () {
     return (this.#data.properties ?? [])
+  }
+
+  get situation () {
+    return (this.#data.properties[0]?.situation ?? '')
   }
 
   constructor (properties) {

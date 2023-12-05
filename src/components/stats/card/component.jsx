@@ -5,14 +5,14 @@ import text from '@elements/text'
 
 function component (card) {
   return (
-    <stack.Div className={style.card} column xs>
+    <stack.Div className={style.card} style={`border-left: var(--border-width-thick) solid ${card.color};`} column xs>
       <stack.Div xs>
         <text.Span master darker xxs bold>{card.situation}</text.Span>
         <text.Span master darker xxs bold>{card.quantity}</text.Span>
       </stack.Div>
-      <stack.Div column xs>
+      <div className={style.card__properties}>
         {card.properties}
-      </stack.Div>
+      </div>
     </stack.Div>
   )
 }
