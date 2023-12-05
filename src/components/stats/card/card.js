@@ -8,7 +8,7 @@ class Card {
   #data = {}
 
   get color () {
-    return (this.#data.properties[0]?.color ?? 'var(--color-master-light)')
+    return f.first(this.#data.properties).color
   }
 
   get quantity () {
@@ -20,24 +20,24 @@ class Card {
   }
 
   get situation () {
-    return (this.#data.properties[0]?.situation ?? '')
+    return f.first(this.#data.properties).situation
   }
 
   constructor (properties) {
     Object.assign(this.#data, { properties })
   }
 
-  static create (data, _stats) {
+  static create (data, element) {
     data = f.from(data)
       .pipe(f.group(f.__, d => d.situacaoId))
       .pipe(f.values(f.__))
-      .pipe(f.map(f.__, Property.create))
+      .pipe(f.map(f.__, Property.create(element)))
       .done()
 
     return data.map((data) => new Card(data))
   }
 
-  static is (_data, _stats) {
+  static is (_data, _element) {
     return f.T
   }
 }

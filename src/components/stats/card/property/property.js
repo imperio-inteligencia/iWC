@@ -5,6 +5,7 @@ import magic from '@standard/magic'
 @paint(component)
 class Property {
   #data = {}
+  #element
 
   get color () {
     return (this.#data.cor ?? 'var(--color-pure-white)')
@@ -12,10 +13,6 @@ class Property {
 
   get description () {
     return (this.#data.descricaoPrioridade ?? '')
-  }
-
-  get id () {
-    return (this.#data.prioridadeId ?? 0)
   }
 
   get quantity () {
@@ -26,16 +23,24 @@ class Property {
     return (this.#data.descricaoSituacao)
   }
 
-  constructor (data) {
+  constructor (data, element) {
     Object.assign(this.#data, data)
+    this.#element = element
+  }
+
+  select () {
+    const detail = { ...this.#data }
+    const event = new CustomEvent('select', { detail })
+    this.#element.dispatchEvent(event)
+    return this
   }
 
   [magic.sum] () {
     return this.quantity
   }
 
-  static create (data) {
-    return data.map(data => new Property(data))
+  static create (element) {
+    return (data) => data.map(data => new Property(data, element))
   }
 }
 

@@ -1,4 +1,4 @@
-import './console'
+// import './console'
 import './reset'
 import './tokens'
 import './boma'

@@ -31,7 +31,7 @@ class Stats {
   [result.Ok] (data) {
     this.#cards = f.cond(
       [Card.is, Card.create]
-    )(data, this)
+    )(data, this.#target)
     return this
   }
 
