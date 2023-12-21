@@ -38,12 +38,12 @@
     "webpack-dev-server": "^4.15.1"
   },
   "name": "iwc",
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "yarn@3.6.0",
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
+    "dev": "webpack server --mode development --open",
     "postinstall": "husky install",
-    "start": "webpack server --mode development --open",
     "test": "jest --passWithNoTests"
   },
   "version": "1.0.0"
