@@ -34,7 +34,7 @@ Para iniciar o projeto e executar um servidor de desenvolvimento, execute o segu
 bashCopy code
 
 ```bash
-yarn start`
+yarn dev`
 ```
 
 Este comando iniciará o servidor de desenvolvimento, permitindo que você experimente os Componentes Web Império em tempo real.
